@@ -26,6 +26,7 @@
   when: jenkins_url_health_check is not defined
 
 - include: "{{ jenkins_install_via }}/install.yml"
+  when: jenkins_install_via != "docker"
 
 - include: "configure-jenkins.yml"
 
